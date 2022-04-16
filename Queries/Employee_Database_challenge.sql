@@ -86,3 +86,13 @@ select DISTINCT ON(e.emp_no) e.emp_no,
 
 --- Count the total retiring employess for part3, Summary,part2
 select sum(count) from retiring_titles;
+
+-- Create mentee counts per titles, is there a good match up of mentors and mentees? 
+SELECT COUNT(me.title), me.title
+INTO mentee_counts
+FROM mentorship_eligibility AS me
+GROUP BY me.title
+ORDER BY COUNT(me.title) DESC;
+
+-- Viewing the mentee counts
+SELECT * FROM mentee_counts; -- returns 6 rows, one less than the retiring list (7 rows)
