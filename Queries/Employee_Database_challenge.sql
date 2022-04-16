@@ -84,4 +84,5 @@ select DISTINCT ON(e.emp_no) e.emp_no,
 	
 	select * from mentorship_eligibility;
 
-
+--- Count the total retiring employess for part3, Summary,part2
+select sum(count) from retiring_titles;
